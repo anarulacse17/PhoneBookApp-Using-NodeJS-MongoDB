@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Schema   = mongoose.Schema;
+const mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 var Contact = new Schema(
     {
@@ -10,8 +10,15 @@ var Contact = new Schema(
     }
 
 );
-
 mongoose.model('contacts', Contact);
-mongoose.connect('mongodb://localhost:27017/contact',{ useNewUrlParser: true,useUnifiedTopology: true })
-.then(res => console.log('Connected to db'));
+const URI='mongodb+srv://Aseem:1234@cluster0-wobyr.mongodb.net/test?retryWrites=true&w=majority';
+mongoose.connect(URI, { useNewUrlParser: true }, (err) => {
+        if (!err) { console.log('MongoDB Connection Succeeded.') }
+    else { console.log('Error in DB connection : ' + err) }
+});
+const connection=mongoose.connection;
+connection.once('open',()=>{
+    console.log('Database has been connected ');
+})
+
 
