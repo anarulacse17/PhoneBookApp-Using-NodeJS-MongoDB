@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% for contact in contacts %}
+<ul class="collapsible">
+    <li>
+      <div class="collapsible-header">Name: {{contact.name}}</div>
+      <div class="collapsible-body"><i class="material-icons">child_care </i> <span>{{ contact.DOB}}</span></div>
+      <div class="collapsible-body"><i class="material-icons">local_phone </i> <span>{{ contact.phone}}</span></div>
+      <div class="collapsible-body"><i class="material-icons">mail </i> <span>{{ contact.email}}</span></div>
+      <div class="collapsible-body"><a  href = "contacts/{{contact.id}}/edit" class="btn btn-info"><i class="material-icons">create</i></a>
+        <a  href = "contacts/{{contact.id}}" class="btn btn-info"><i class="material-icons">delete</i></a></div> 
+    </li>
+</ul>
+  {% endfor %}
+{% endblock %}
+
