@@ -1,7 +1,7 @@
 # PhoneBookApp-Using-NodeJS-MongoDB
-Made this app using nodeJs and MongoDb which runs on older version of node js below 5.3 beacause javascript &
-html template engines are being used also used bootstap and materliaze css together
+Made this app using NodeJs & mongoDb
+Javascript & HTML template engines are used
+BootStrap and Materialize for Styles
  
-Run this app by downloading and giving command npm install 
-Also change the node version and express-validator version to 5.3.0 
-This app runs on mongoDBcompass
+Run this app by downloading and running the npm install command 
+Also create a database in mongoDb atlas
