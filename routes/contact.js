@@ -21,12 +21,8 @@ router.get('/create', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-    req.assert('name', 'Name is required').notEmpty();
-    req.assert('email', 'A valid email is required').isEmail();
-    req.assert('DOB', 'DOB is required').notEmpty();
-    req.assert('phone', 'Phone Number is required').notEmpty();
-
-    var errors = req.validationErrors();
+  
+    var errors = '';
 
     if( !errors){
         new contact({
@@ -70,12 +66,8 @@ router.get('/:id/edit', function(req, res) {
 
 router.put('/:id', function(req, res) {
     var query = {"_id": req.params.id};
-    req.assert('name', 'Name is required').notEmpty();
-    req.assert('email', 'A valid email is required').isEmail();
-    req.assert('DOB', 'DOB is required').notEmpty();
-    req.assert('phone', 'Phone Number is required').notEmpty();
-
-    var errors = req.validationErrors();
+    
+    var errors =''
     if( !errors) {
         var update = {
             name: req.body.name.toLowerCase(),
